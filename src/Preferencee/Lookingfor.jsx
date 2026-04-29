@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./LookingFor.css";
+import "./Lookingfor.css";
 
 export default function LookingFor() {
   const navigate = useNavigate();

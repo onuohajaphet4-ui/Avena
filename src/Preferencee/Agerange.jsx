@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./AgeRange.css";
+import "./Agerange.css";
 
 export default function AgeRange() {
   const navigate = useNavigate();
