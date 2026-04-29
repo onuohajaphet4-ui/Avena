@@ -1,0 +1,101 @@
+.chatPage{
+    background:#08080c;
+    min-height: 100vh;
+    color: white;
+    padding: 20px;
+
+
+.chatHeader{
+    margin-bottom: 10px;
+}
+
+hr{
+    padding: 0.5px;
+    border: none;
+    background-color: gray;
+    margin-bottom: 20px;
+}
+
+.chatHeader h1{
+    font-size: 15px;
+     margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.matchContainer{
+    display: flex;
+    flex-direction: column;
+    /* gap: 15px; */
+}
+
+.matchCard{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.matchCard:hover{
+   background:
+  #241126 ;
+}
+
+.matchImage{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.matchInfo h2{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.matchInfo p{
+    color: gray;
+    font-size: 14px;
+}
+
+.search-container{
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.search-input{
+  width: 100%;
+  padding: 14px ;
+  padding-left: 60px;
+  border: none;
+  outline: none;
+  border-radius: 14px;
+  background: #1f1f1f;
+  color: white;
+  font-size: 15px;
+}
+
+.search-input:focus {
+  border-bottom: 2px solid #ff4fa3;
+}
+
+.search-input::placeholder{
+  color: #999;
+}
+
+.input-wrapperr{
+    position: relative;
+
+}
+
+.input-iccon{
+    position: absolute;
+    top: 31%;
+    left: 30px;
+    pointer-events: none;
+}
+}

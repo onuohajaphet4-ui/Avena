@@ -1,0 +1,170 @@
+.likes-page{
+  min-height:100vh;
+  background:#08080c;
+  padding:20px;
+  color:white;
+  padding-bottom: 30%;
+
+
+ h1{
+ font-size: 15px;
+     margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+ }
+
+ hr{
+    padding: 0.5px;
+    border: none;
+    background-color: gray;
+    margin-bottom: 20px;
+}
+
+.likes-container{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  max-width:700px;
+  margin:auto;
+}
+
+.like-card{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  background:
+  radial-gradient(circle at top right,#241126 0%,#0b0b10 35%),
+  linear-gradient(180deg,#0b0b10,#13131d);
+  padding:15px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.3s;
+}
+
+.like-card:hover{
+  transform:scale(1.02);
+}
+
+.like-image{
+  width:100px;
+  height:100px;
+  border-radius:20px;
+  object-fit:cover;
+}
+
+.like-info{
+  flex:1;
+}
+
+.like-info h3{
+  font-size:24px;
+  margin-bottom:8px;
+}
+
+.like-info p{
+  color:#d1d5db;
+  margin-bottom:15px;
+}
+
+.like-buttons{
+  display:flex;
+  gap:12px;
+}
+
+.like-back{
+  background:#ec4899;
+  border:none;
+  padding:10px 18px;
+  border-radius:12px;
+  color:white;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.like-back:hover{
+  transform:scale(1.05);
+}
+
+.pass{
+  background:#374151;
+  border:none;
+  padding:10px 18px;
+  border-radius:12px;
+  color:white;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.pass:hover{
+  background:#4b5563;
+}
+
+.empty-state{
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  gap: 15px;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  height: 40vh;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 10px rgba(32, 32, 32, 0.6);
+  margin: 100px auto;
+  background:
+  radial-gradient(circle at top right,#241126 5%,#0b0b10 35%),
+  linear-gradient(180deg,#0b0b10,#13131d);
+}
+
+.empty-state h2{
+  font-size: 28px;
+}
+
+.empty-state p{
+  max-width: 300px;
+  opacity: 0.7;
+  font-weight: bold;
+}
+
+.restart-btn{
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+ background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.restart-btn:hover{
+  transform: scale(1.05);
+  transform: translateY(-4px) scale(1.05);
+  background: linear-gradient(135deg, #ff4d6d, #ff758f);
+  box-shadow: 0 8px 20px rgba(255, 77, 109, 0.4);
+}
+}
+
+@media(max-width:700px){
+
+    .likes-page{
+  .like-card{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .like-buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+}
+}

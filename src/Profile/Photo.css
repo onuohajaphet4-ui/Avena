@@ -1,0 +1,126 @@
+.photo-body{
+.photo {
+  width: 100%;
+  /* max-width: 430px; */
+  background: #1a1a1d;
+  padding: 30px 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  text-align: center;
+  
+}
+
+
+.pho{
+  padding-bottom: 5%;
+}
+.photo h1 {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.photo h4 {
+  color: #b7b7b7;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* error */
+.photo p {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* file input */
+.photo-input[type="file"] {
+  width: 90%;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* photo grid */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 15px;
+}
+
+/* photo card */
+.photo-box {
+  background: #242428;
+  border-radius: 14px;
+  padding: 10px;
+}
+
+.photo-box img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* remove button */
+.photo-box button {
+  margin-top: 10px;
+  width: 100%;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+
+}
+
+/* main next button */
+
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+}
+
+/* mobile */
+@media (max-width: 600px) {
+ .photo-body{
+  .photo {
+    padding: 24px 18px;
+    /* height: 81vh; */
+    
+  }
+
+  .photo-box img {
+    height: 130px;
+  }
+
+  .photo h1 {
+    font-size: 25px;
+  }
+
+  .pho{
+  padding-bottom: 15%;
+}
+}
+}
+
+@media (max-width: 450px) {
+ .photo-body{
+  .photo {
+    padding: 24px 18px;
+     
+    width:105%;
+    
+  }
+}
+}

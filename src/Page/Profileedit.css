@@ -1,0 +1,157 @@
+/* PAGE */
+
+
+.edit-page {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+
+
+.edit-int{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  font-size: 12px;
+}
+/* TITLE */
+.edit-page h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* CARD */
+.edit-card {
+  background:
+  radial-gradient(circle at top right,#241126 0%,#0b0b10 35%),
+  linear-gradient(180deg,#0b0b10,#13131d);
+  padding: 18px;
+  margin-bottom: 18px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.edit-card:hover {
+  transform: translateY(-3px);
+}
+
+/* CARD TITLE */
+.edit-card h3 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #a5b4fc;
+}
+
+/* INPUTS */
+.edit-card input,
+.edit-card textarea,
+.edit-card select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #1f2937;
+  color: #fff;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+
+
+/* FOCUS EFFECT */
+.edit-card input:focus,
+.edit-card textarea:focus,
+.edit-card select:focus {
+  background: #374151;
+  border: 1px solid rgba(236, 72, 153, 0.4);
+  border-color: rgba(236, 72, 153, 0.4);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.15);
+}
+
+/* TEXTAREA */
+.edit-card textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+/* PLACEHOLDER */
+::placeholder {
+  color: #9ca3af;
+}
+
+/* BUTTON */
+.save-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #ff4fa3, #8b5cf6, #ff7a45);
+  color: white;
+
+  transition: 0.3s;
+}
+
+/* BUTTON HOVER */
+.save-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(99,102,241,0.4);
+}
+
+/* LOADING */
+.edit-page p {
+  text-align: center;
+  margin-top: 40px;
+}
+
+
+/* PHOTO GRID */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.photo-box {
+  position: relative;
+}
+
+.photo-box img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.photo-box button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+}
+
+/* MOBILE */
+@media (max-width: 500px) {
+  .edit-page {
+    padding: 15px;
+  
+
+  .edit-card {
+    padding: 15px;
+  }
+}
+}

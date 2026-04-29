@@ -1,0 +1,151 @@
+.nav{
+    border-top: 1px solid grey;
+    padding: 10px;
+    /* box-shadow: 10px 4px 12px rgb(68, 68, 68); */
+    display: flex;
+    background:#08080c;
+    
+    box-shadow: 10px 4px 12px rgb(7, 7, 7);
+
+    
+   
+    .logo{
+        display: flex;
+        gap: 15px;
+        width: 30%;
+        img{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+       
+        }
+
+        .hello{
+            margin-top: 5px;
+
+            h4{
+                color: rgb(138, 131, 131);
+                font-size: 14px;
+
+            }
+
+            span{
+                color:white;
+                font-weight: bold;
+            }
+
+            p{
+                color: rgb(182, 180, 180);
+                font-size: 15px;
+            }
+        }
+    }
+
+
+     
+    ul{
+        display: flex;
+        justify-content: space-around;
+        gap: 150px;
+        margin-top: 10px;
+        
+    
+    }
+
+    li{
+        text-decoration: none;
+        list-style: none;
+       display: flex;
+       flex-direction: column;
+       color: white;
+
+
+       
+       span{
+        font-weight: bold;
+        font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+        font-size: 18px;
+       }
+
+       span.active{
+        color: red;
+       }
+
+       .icon{
+        text-align: center;
+        align-self: center;
+        display: none;
+       }
+    }
+    li:hover{
+        color:  #ff4fa3;
+    }
+
+    
+   
+
+    
+}
+
+.smallnav{
+    display: none;
+}
+@media(max-width:600px){
+    .smallnav{
+        display: block;
+        border-top: 1px solid grey;
+    padding: 10px;
+     position: fixed;
+     z-index: 1000;
+    bottom: 0%;
+    left: 0; 
+    width: 100%; 
+     background:#08080c;
+    
+    box-shadow: 10px 4px 12px rgb(7, 7, 7);
+
+    ul{
+        display: flex;
+        justify-content: center;
+        gap:40px;
+        margin-top: 10px;
+        
+    
+    }
+
+    li{
+        text-decoration: none;
+        list-style: none;
+       display: flex;
+       flex-direction: column;
+       color:white;
+
+       
+       span{
+        font-weight: bold;
+        font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+        font-size: 15px;
+       }
+
+       span.active{
+        color: red;
+       }
+
+       .iconb{
+        text-align: center;
+        align-self: center;
+        
+       }
+    }
+    li:hover{
+        color: #ff4fa3;
+    }
+
+
+    }
+
+    .nav{
+        display: none;
+    }
+}

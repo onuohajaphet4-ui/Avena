@@ -1,0 +1,142 @@
+
+.personality-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(123, 97, 255, 0.18), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(255, 77, 141, 0.18), transparent 35%),
+    linear-gradient(to bottom, #050505, #0f0f10);
+  color: #fff;
+  padding: 22px 18px 130px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.top-bar button,
+.top-bar span {
+  border: none;
+  background: rgba(255,255,255,0.05);
+  color: white;
+  padding: 9px 14px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 15px;
+  backdrop-filter: blur(8px);
+}
+
+/* Heading */
+.personality-page h1 {
+  font-size: 40px;
+  line-height: 1.05;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+  font-weight: 700;
+}
+
+.personality-page p {
+  color: #b4b4b8;
+  font-size: 16px;
+  margin-bottom: 28px;
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+/* Question cards */
+.question-box {
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 24px;
+  padding: 18px;
+  margin-bottom: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+}
+
+.question-box h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #f8f8f8;
+}
+
+/* Options */
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.option {
+  border: 1px solid rgba(255,255,255,0.08);
+  background: #151515;
+  color: #e7e7e7;
+  border-radius: 16px;
+  padding: 14px 10px;
+  font-size: 14px;
+  line-height: 1.35;
+  cursor: pointer;
+  transition: 0.22s ease;
+  min-height: 58px;
+}
+
+.option:hover {
+  transform: translateY(-2px);
+}
+
+.option.active {
+  background: linear-gradient(135deg, #ff4d8d, #7b61ff);
+  color: white;
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 10px 22px rgba(123, 97, 255, 0.22);
+}
+
+/* Error */
+.error {
+  margin-top: 6px;
+  color: #ff7a93;
+  font-size: 14px;
+}
+
+/* CTA */
+.next-btn {
+  position: fixed;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  border: none;
+  border-radius: 20px;
+  padding: 17px;
+  font-size: 19px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff, #ececec);
+  color: #111;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .personality-page h1 {
+    font-size: 34px;
+  }
+
+  .options {
+    grid-template-columns: 1fr;
+  }
+
+  .option {
+    min-height: 54px;
+  }
+
+  .next-btn {
+    font-size: 18px;
+  }
+}

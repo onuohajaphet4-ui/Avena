@@ -1,0 +1,192 @@
+.settings {
+  max-width: 520px;
+  margin: auto;
+  padding: 20px;
+  color: #e5e7eb;
+  
+
+
+
+.title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* SECTION */
+.section {
+  background:
+  radial-gradient(circle at top right,#241126 0%,#0b0b10 35%),
+  linear-gradient(180deg,#0b0b10,#13131d);
+  padding: 18px;
+  margin-bottom: 18px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.section h3 {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+
+/* CARD CONTAINER */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ITEM (CARD STYLE LIKE YOUR APP) */
+.item {
+  background: linear-gradient(135deg, #1f2937, #111827);
+  border-radius: 16px;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.25s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* HOVER EFFECT */
+.item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(236, 72, 153, 0.4);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.15);
+}
+
+/* TEXT */
+.item span {
+  opacity: 0.5;
+  font-size: 18px;
+}
+
+.itemm {
+  /* background: linear-gradient(135deg, #1f2937, #111827); */
+  border-radius: 16px;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.25s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.397);
+  font-weight: bold;
+}
+
+/* HOVER EFFECT */
+.itemm:hover {
+  transform: translateY(-2px);
+  border-color: rgba(236, 72, 153, 0.4);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.15);
+}
+
+/* TEXT */
+.itemm span {
+  opacity: 0.5;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.dropdown {
+  background: rgba(255,255,255,0.05);
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.dropdown.options div {
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.dropdown.options div:hover {
+ background: linear-gradient(135deg, #ff4d6d, #ff758f);
+  box-shadow: 0 8px 20px rgba(255, 77, 109, 0.4);
+}
+
+.dropdown.options .active {
+   background: linear-gradient(135deg, #ff4fa3, #8b5cf6, #ff7a45);
+  color: #fff;
+}
+
+.toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* TOGGLE ROW */
+.item.toggle {
+  cursor: default;
+}
+
+/* CUSTOM TOGGLE */
+.toggle input {
+  appearance: none;
+  width: 40px;
+  height: 22px;
+  background: #374151;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggle input::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  transition: 0.3s;
+}
+
+/* TOGGLE ACTIVE */
+.toggle input:checked {
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+}
+
+.toggle input:checked::before {
+  transform: translateX(18px);
+}
+
+/* DANGER ZONE */
+.danger {
+  margin-top: 10px;
+}
+
+.danger .item {
+  background: linear-gradient(135deg, #2a1a1a, #1a0f0f);
+}
+
+/* DELETE */
+.delete {
+  color: #f87171;
+  font-weight: 500;
+}
+
+.delete:hover {
+  box-shadow: 0 6px 20px rgba(248, 113, 113, 0.2);
+}
+
+/* LOGOUT */
+.logout {
+  color: #5e4c21;
+  font-weight: 500;
+}
+
+.logout:hover {
+  box-shadow: 0 6px 20px rgba(251, 191, 36, 0.2);
+}
+}
