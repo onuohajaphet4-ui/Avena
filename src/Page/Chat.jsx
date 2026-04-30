@@ -9,9 +9,13 @@ const Matches = () => {
   const [search, setSearch] = useState("");
   const [matches, setMatches] = useState([]);
   const currentUser = JSON.parse(localStorage.getItem("user"));
+  console.log("stored user:", currentUser)
   const currentUserId = currentUser?._id;
+    
+ 
 
   const getMatches = async () => {
+    
     
     try {
 
@@ -87,9 +91,11 @@ const Matches = () => {
       <div className="matchContainer">
 
         {filteredMatches.map((match) => {
+          console.log("Current User:", currentUser.id)
+         console.log("Match Users:", match.users)
 
           const otherUser = match.users.find(
-            (u) => u._id !== currentUser._id
+            (u) => u._id !== currentUser.id
           );
 
            console.log(otherUser)

@@ -2,6 +2,7 @@ import "./Chatroom.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate , Link} from "react-router-dom";
+import {socket} from '../socket'
 
 const ChatRoom = () => {
 
@@ -9,7 +10,11 @@ const ChatRoom = () => {
   const navigate = useNavigate();
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState("");
+  const [onlineUsers, setOnlineUsers] = useState([]);
+  const [lastSeenUsers, setLastSeenUsers] = useState({});
   const [otherUser, setOtherUser] = useState(null);
+  const [lastSeenMap, setLastSeenMap] = useState({});
+
   const currentUser = JSON.parse(
     localStorage.getItem("user")
   );
@@ -106,11 +111,113 @@ const ChatRoom = () => {
 
   };
 
+  useEffect(() => {
+
+  if (currentUser?.id) {
+
+    socket.emit(
+      "join",
+      currentUser.userId
+    );
+
+  }
+  
+
+}, [currentUser]);
+
+useEffect(() => {
+
+  socket.on("getOnlineUsers", (users) => {
+    setOnlineUsers(users);
+  });
+
+  socket.on("userLastSeen", (data) => {
+    console.log("LAST SEEN DATA:", data);
+    setLastSeenUsers((prev) => ({
+      ...prev,
+      [data.userId]: data.lastSeen,
+    }));
+
+   
+
+  });
+
+  return () => {
+    socket.off("getOnlineUsers");
+    socket.off("userLastSeen");
+  };
+
+}, []);
+
+
+  
+
+  const formatMessageDate = (date) => {
+  const msgDate = new Date(date);
+  const today = new Date();
+
+  const isToday =
+    msgDate.toDateString() === today.toDateString();
+
+  const yesterday = new Date();
+  yesterday.setDate(today.getDate() - 1);
+
+  const isYesterday =
+    msgDate.toDateString() === yesterday.toDateString();
+
+  if (isToday) {
+    return msgDate.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  }
+
+  if (isYesterday) {
+    return "Yesterday";
+  }
+
+  return msgDate.toLocaleDateString([], {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+  });
+};
   
 
 
 
+const isOnline = onlineUsers.includes(otherUser?.userId);
 
+
+
+const formatLastSeen = (date) => {
+
+  if (!date) return "Offline";
+
+  const lastSeen = new Date(date);
+  const now = new Date();
+
+  const diffMs = now - lastSeen;
+
+  const diffHours =
+    diffMs / (1000 * 60 * 60);
+
+  // LESS THAN 24 HOURS
+  if (diffHours < 24) {
+
+    return `Last seen at ${lastSeen.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    })}`;
+
+  }
+
+  // MORE THAN 24 HOURS
+  return `Last seen ${lastSeen.toLocaleDateString([], {
+    month: "short",
+    day: "numeric",
+  })}`;
+};
   return (
 
     <div className="chatroom">
@@ -142,9 +249,15 @@ const ChatRoom = () => {
               {otherUser?.name}
             </h3>
 
-            <p style={{color:'green'}}>
-              Online
-            </p>
+            <p className={isOnline ? "online-text" : "offline-text"}>
+  {isOnline
+  ? "Online"
+  : formatLastSeen(
+      lastSeenUsers[otherUser?.userId]
+    )}
+
+    
+</p>
 
           </div>
 
@@ -162,46 +275,94 @@ const ChatRoom = () => {
 
         <img
             src={
-  otherUser?.photos?.[0] ||
-  "/default.jpg"
-}
+            otherUser?.photos?.[0] ||
+           "/default.jpg"
+           }
             className="header-avata"
-          />
+        />
 
-          <h3>
-              {otherUser?.name}
-            </h3>
+        <h3>
+          {otherUser?.name}
+        </h3>
 
-            <button>
-                <Link to={`/userprofile/${otherUser?.userId}`} style={{textDecoration:'none', color:'inherit'}}>View Profile</Link> 
-            </button>
-
-
+        <button>
+          <Link to={`/userprofile/${otherUser?.userId}`} style={{textDecoration:'none', color:'inherit'}}>View Profile</Link> 
+        </button>
 
 
-        {messages.map((msg) => {
+        <div className="messages">
 
-          const isMine =
-            msg.sender === currentUser._id;
+  {messages.map((msg) => {
 
-          return (
+    const isMine =
+      msg.sender === currentUser.id;
 
-            <div
-              key={msg._id}
-              className={
-                isMine
-                  ? "message my-message"
-                  : "message other-message"
-              }
-            >
+    return (
 
-              {msg.text}
+      <div key={msg._id}>
+
+        {/* DATE */}
+        {msg.createdAt && (
+
+          <div className="chat-date">
+            {/* {formatMessageDate(msg.createdAt)} */}
+          </div>
+
+        )}
+
+
+
+
+
+
+        {/* MESSAGE BUBBLE */}
+        <div
+          className={
+            isMine
+              ? "message my-message"
+              : "message other-message"
+          }
+        >
+
+          <p>{msg.text}</p>
+
+
+
+
+
+
+          {/* TIME */}
+          {msg.createdAt && (
+
+            <div className="bubble-footer">
+
+              {new Date(
+                msg.createdAt
+              ).toLocaleTimeString([], {
+
+                hour: "2-digit",
+                minute: "2-digit",
+
+              })}
 
             </div>
 
-          );
+          )}
 
-        })}
+        </div>
+
+      </div>
+
+    );
+
+  })}
+
+</div>
+ 
+
+
+
+       
 
       </div>
 

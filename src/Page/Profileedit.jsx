@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Profileedit.css";
 import { useNavigate,Link } from "react-router-dom";
+import {
+  CircularProgress,
+} from "@mui/material";
 
 export default function EditProfile() {
 
@@ -34,7 +37,7 @@ export default function EditProfile() {
 
   const token = localStorage.getItem("token");
 
-  // ================= GET PROFILE =================
+ 
   useEffect(() => {
     getProfile();
   }, []);
@@ -68,7 +71,6 @@ export default function EditProfile() {
     }
   };
 
-  // ================= HANDLE CHANGE =================
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -76,7 +78,7 @@ export default function EditProfile() {
     });
   };
 
-  // ================= ARRAY INPUT =================
+ 
   const handleArrayChange = (e, field) => {
     setForm({
       ...form,
@@ -84,7 +86,7 @@ export default function EditProfile() {
     });
   };
 
-  // ================= PHOTO SELECT =================
+  
   const handlePhotoChange = (e) => {
     const files = Array.from(e.target.files);
 
@@ -112,7 +114,7 @@ export default function EditProfile() {
     });
   };
 
-  // ================= SUBMIT =================
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -129,7 +131,7 @@ export default function EditProfile() {
         }
       });
 
-      // new photos
+      
       newPhotos.forEach((file) => {
         formData.append("photos", file);
       });
@@ -169,9 +171,15 @@ export default function EditProfile() {
   { name: "Pisces", emoji: "♓" }
 ];
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) {
+  return (
+    <div style={{ display: "flex", justifyContent: "center", marginTop: "50%" }}>
+      <CircularProgress style={{color:'#ec4899'}} />
+    </div>
+  );
+}
 
-  // ================= PROMPT PARSE =================
+  
   let parsedPrompt = {};
   try {
     parsedPrompt = form.prompt

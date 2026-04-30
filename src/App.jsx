@@ -29,6 +29,8 @@ import Agerange from './Preferencee/Agerange'
 import Interests from './Component/Interest'
 import Personalitys from './Component/Personality'
 import User from './Page/Userpro'
+import Forgot from './Profile/Forgot'
+import Reset from './Profile/Reset'
 
 function App() {
 
@@ -63,6 +65,8 @@ function App() {
                <Route path='/edit-personality' element={<Personalitys/>} />
                <Route path='/likeprofile/:id' element={<Likepro/>} />
                <Route path='/userprofile/:id' element={<User/>} />
+               <Route path='/forgot' element = {<Forgot/>}/>
+               <Route path='/reset-password/:token' element = {<Reset/>}/> 
                
     </Routes>
     </>

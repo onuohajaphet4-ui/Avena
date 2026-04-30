@@ -4,6 +4,9 @@ import "./Profile.css";
 import {Link, useParams} from 'react-router-dom'
 import {FiEdit, FiSettings} from 'react-icons/fi'
 import Nav from '../Component/Nav'
+import {
+  CircularProgress,
+} from "@mui/material";
 
 
 export default function Profile() {
@@ -204,8 +207,12 @@ const getVibeDetails = (type) => {
 const vibe = getVibeDetails(preference?.personalityType);
 
 
-  if (loading) {
-    return <div className="loading">Loading Profile...</div>;
+   if (loading) {
+    return (
+      <div style={{ display: "flex", justifyContent: "center", marginTop: "50%" }}>
+        <CircularProgress style={{color:'#ec4899'}} />
+      </div>
+    );
   }
 
   return (

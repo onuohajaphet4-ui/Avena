@@ -83,13 +83,15 @@ const Register = () => {
   </IconButton>
 </div>
 
+ <Link to="/forgot"><p className="reset"> Reset Password?</p></Link>
+
         
 
         <br /> <br />
 
        
 
-        <button onClick={handleLogin} disabled={loading} className="reg-button">
+        <button onClick={handleLogin} disabled={loading} className="regg-button">
           {loading ? (
             <CircularProgress size={24} sx={{ color: "black" }} />
           ) : (
