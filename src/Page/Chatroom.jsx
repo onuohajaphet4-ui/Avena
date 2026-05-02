@@ -1,6 +1,6 @@
 import "./Chatroom.css";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState , useRef} from "react";
 import { useParams, useNavigate , Link} from "react-router-dom";
 import {socket} from '../socket'
 
@@ -14,7 +14,7 @@ const ChatRoom = () => {
   const [lastSeenUsers, setLastSeenUsers] = useState({});
   const [otherUser, setOtherUser] = useState(null);
   const [lastSeenMap, setLastSeenMap] = useState({});
-
+  const messagesEndRef = useRef (null)
   const currentUser = JSON.parse(
     localStorage.getItem("user")
   );
@@ -148,6 +148,13 @@ useEffect(() => {
   };
 
 }, []);
+
+useEffect (() => {
+
+  messagesEndRef.current?.scrollIntoView({
+    behavior:"smooth"
+  })
+} , [messages])
 
 
   
@@ -292,6 +299,8 @@ const formatLastSeen = (date) => {
 
         <div className="messages">
 
+          <div className="message-ss">
+
   {messages.map((msg) => {
 
     const isMine =
@@ -305,7 +314,7 @@ const formatLastSeen = (date) => {
         {msg.createdAt && (
 
           <div className="chat-date">
-            {/* {formatMessageDate(msg.createdAt)} */}
+            {formatMessageDate(msg.createdAt)}
           </div>
 
         )}
@@ -357,6 +366,10 @@ const formatLastSeen = (date) => {
 
   })}
 
+
+  <div ref={messagesEndRef}></div>
+
+</div>
 </div>
  
 

@@ -3,6 +3,9 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
 import Nav from "../Component/Nav";
+import {
+  CircularProgress,
+} from "@mui/material";
 
 export default function Discovery() {
 
@@ -11,6 +14,7 @@ export default function Discovery() {
   const [currentUser, setCurrentUser] = useState(null);
   const [open, setOpen] = useState(null);
   const [likes, setLikes] = useState([]);
+    const [loading, setLoading] = useState(true);
 
   useEffect(() => {
 
@@ -68,7 +72,9 @@ export default function Discovery() {
       } catch (err) {
         console.log(err);
   
-      }
+      }finally {
+      setLoading(false);
+    }
   
     };
 
@@ -93,10 +99,14 @@ export default function Discovery() {
 
 
 
+
+
   if (!currentUser) {
-
-    return <h2>Loading...</h2>;
-
+    return (
+      <div style={{ display: "flex", justifyContent: "center", marginTop: "50%" }}>
+        <CircularProgress style={{color:'#ec4899'}} />
+      </div>
+    );
   }
 
 
