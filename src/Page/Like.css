@@ -2,6 +2,7 @@
   min-height:100vh;
   background:#08080c;
   padding:20px;
+  /* padding-right:25px; */
   color:white;
   padding-bottom: 30%;
 
@@ -151,6 +152,37 @@
   background: linear-gradient(135deg, #ff4d6d, #ff758f);
   box-shadow: 0 8px 20px rgba(255, 77, 109, 0.4);
 }
+
+.like-empty-state{
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  height: 40vh;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 10px rgba(32, 32, 32, 0.6);
+  margin: 90px auto;
+  background:
+  radial-gradient(circle at top right,#241126 5%,#0b0b10 35%),
+  linear-gradient(180deg,#0b0b10,#13131d);
+}
+
+.like-empty-state h2{
+  font-size: 28px;
+}
+
+.like-empty-state p{
+  max-width: 300px;
+  opacity: 0.7;
+  font-weight: bold;
+}
+
 }
 
 @media(max-width:700px){

@@ -174,7 +174,7 @@ export default function Likes() {
 
             ) : (
 
-              <div className="empty-state">
+              <div className="like-empty-state">
 
                 <h2>No likes yet 😢</h2>
 

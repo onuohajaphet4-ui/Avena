@@ -7,4 +7,9 @@
 
 body{
   background:#08080c;
+  background:
+    radial-gradient(circle at top right, rgba(123, 97, 255, 0.18), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(255, 77, 141, 0.18), transparent 35%),
+    linear-gradient(to bottom, #050505, #0f0f10);
+
 }
