@@ -44,7 +44,7 @@ const RelationshipType = () => {
 
        <div className="progress-bar">
               <div className="rel-progress-fill"></div>
-            </div>
+        </div>
       <h1>What relationship style suits you?</h1>
       <p>
         Choose what feels right now. You can always update it later.

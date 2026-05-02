@@ -167,6 +167,12 @@
   font-size:15px;
 }
 
+.chat-input-box input:focus{
+ border: 2px solid #ff3c8d;
+}
+
+
+
 .plus-btn{
   width:45px;
   height:45px;

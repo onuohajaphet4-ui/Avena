@@ -66,7 +66,7 @@ const PhotoStep = () => {
       console.log(formData)
 
       const res = await axios.post(
-        "https://avena-backend.onrender.com/api/profile",
+        "http://localhost:3000/api/profile",
         formData,
         {
           headers: {
@@ -88,11 +88,9 @@ const PhotoStep = () => {
 
   return (
     <div className="photo-body">
-    <div className="register">
+    <div className="photo-register">
 
-       <h3>
-        <Link to='/looking'> skip </Link>
-      </h3>
+       
       <div className="pho">
       <div className="photo">
         <h1>Add your photos</h1>

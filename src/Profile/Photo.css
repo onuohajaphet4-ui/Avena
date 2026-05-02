@@ -1,4 +1,6 @@
 .photo-body{
+ background-color: #ff6b6b;
+  
 .photo {
   width: 100%;
   /* max-width: 430px; */
@@ -7,6 +9,8 @@
   border-radius: 18px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
   text-align: center;
+  margin-top: 15%;
+  margin-bottom: 10%;
   
 }
 

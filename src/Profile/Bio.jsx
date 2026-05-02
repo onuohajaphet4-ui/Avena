@@ -32,7 +32,7 @@ export default function BioStep() {
   };
 
   return (
-    <div className="register">
+    <div className="registerr">
       <div className="bio-box">
 
         <div className="top-row">

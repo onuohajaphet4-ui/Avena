@@ -11,7 +11,7 @@
 .intro{
     background: linear-gradient(135deg, #ff4fa3, #8b5cf6, #ff7a45);
     padding: 10%;
-
+    
     .con{
         margin-top: 10%;
 
@@ -73,7 +73,7 @@
     }
 }
 
-@media(max-width:600px){
+@media(max-width:400px){
      .intro-img{
         margin-left: 23%;
         
@@ -88,6 +88,7 @@
     }
     .intro{
         padding-top: 35%;
+        height: 100vh;
 
         .con{
             margin-top: 45%;
