@@ -247,10 +247,12 @@
         bottom: 86px;
     }
 
-
+    .card{
+      height: 70vh;
+    }
     .card-overlay {
   position: absolute;
-  bottom: 150px;
+  bottom: 100px;
   left: 16px;
   right: 16px;
   color: white;

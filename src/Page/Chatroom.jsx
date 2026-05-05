@@ -256,7 +256,11 @@ const formatLastSeen = (date) => {
               {otherUser?.name}
             </h3>
 
-            <p className={isOnline ? "online-text" : "offline-text"}>
+            <p className={
+              isOnline 
+              ? "online-text"
+              : "offline-text"}>
+
   {isOnline
   ? "Online"
   : formatLastSeen(
